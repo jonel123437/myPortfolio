@@ -1,0 +1,70 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed; /* Fix the header position */
+    width: 100%; /* Make the header take the full width */
+    top: 0; /* Place the header at the top of the viewport */
+    z-index: 1000; /* Ensure the header is on top of other elements */
+}
+
+nav {
+    background-color: #444;
+    padding: 10px;
+    margin-top: 80px; /* Add margin-top to avoid content being hidden under the fixed header */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: underline 0.3s ease; /* Add transition for smooth effect */
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Keep the underline visible even without hover */
+nav a:focus {
+    text-decoration: underline;
+}
+
+section {
+    padding: 120px 20px 20px; /* Add padding to the top to avoid content being hidden under the fixed header */
+}
+
+h2 {
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+

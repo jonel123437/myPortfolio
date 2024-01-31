@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="C:/Users/tingjp/Desktop/java/web portfolio/jelogo.ico" type="image/x-icon">
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #000;
+            overflow-y: scroll; /* Enable vertical scrolling */
+            overflow-x: hidden;
+        }
+
+        /* For WebKit browsers (Chrome, Safari) */
+        ::-webkit-scrollbar {
+            width: 7px; /* Set the width of the scrollbar */
+            background-color: #000; /* Set the background color of the scrollbar area */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #808080; /* Set the color of the thumb (the draggable part) */
+            border-radius: 6px; /* Round the corners of the thumb */
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #000; /* Set the background color of the track (the non-draggable part) */
+        }
+
+        .dot-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .dot {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: twinkleDot 2s infinite linear;
+            transition: transform 0.3s ease;
+        }
+
+        @keyframes twinkleDot {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0.5) translate(0, 0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1) translate(-10px, -10px);
+            }
+        }
+
+        nav {
+            background-color: black;
+            padding: 0px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid white;
+            text-align: left;
+            display: flex; /* Center vertically using flexbox */
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 25px;
+            transition: underline 0.3s ease;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center; /* Center vertically using flexbox */
+        }
+
+        nav li {
+            margin-right: 80px;
+        }
+
+        nav img {
+            width: 50px;
+            height: 40px;
+            border-radius: 100%;
+            margin-right: 240px;
+            margin-left: 90px;
+            margin-top: 10px;
+        }
+
+        nav a:hover,
+        nav a:focus,
+        nav a.active {
+            text-decoration: none; /* Remove default underline */
+            border-bottom: 2px solid blue; /* Set the underline color to blue */
+            padding-bottom: 8px; /* Adjust the distance of the underline from the text */
+            color: blue; /* Adjust the color of the link */
+        }
+
+        nav a.active {
+            text-decoration-color: blue; /* Adjust the color of the underline for the active link */
+            color: blue;
+        }
+
+        section {
+            color: white;
+            padding: 700px 20px 20px;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        #home {
+            position: relative; /* Ensure relative positioning for absolute positioning inside */
+        }
+
+        .circle {
+            position: absolute;
+            width: 270px;
+            height: 270px;
+            background-color: #1260CC; /* Adjust color as needed */
+            border-radius: 50%;
+            top: 180px; /* Adjust the top position as needed */
+            background: url('C:/Users/tingjp/Desktop/java/web portfolio/avatar.png') no-repeat center/cover;
+            left: 650px; /* Adjust the left position as needed */
+            z-index: 1;
+        }
+
+        #home h2 {
+            font-size: 50px;
+            color: white;
+            left: 100px;
+            top: 130px;
+            position: absolute;
+            font-family: 'Comic Sans MS', cursive;
+            font-weight: bold;
+        }
+
+        #home p {
+            font-size: 30px;
+            color: #ff0000;
+            top: 304px;
+            left: 225px;
+            position: absolute;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+            animation: typing 2s steps(20, end) 1.5s, blink-caret 0.5s step-end 1.5s infinite;
+            font-weight: bold;
+        }
+
+        #home h2:nth-child(2) {
+            font-size: 50px;
+            color: white;
+            top: 210px;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+        }
+
+        @keyframes blink-caret {
+            from, to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        r {
+            color: white;
+            font-size: 30px;
+            position: absolute;
+            top: 335px;
+            left: 100px;
+        }
+
+        .button {
+            position: absolute;
+            top: 400px;
+            left: 100px;
+            display: inline-block;
+            padding: 12px 50px;
+            background-color: #1260CC;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+            font-family: 'Comic Sans MS', cursive;
+        }
+
+        .button:hover {
+            background-color: #0000FF;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+		
+		#about {
+			padding: 50px 100px 100px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column; /* Optional: If you want content centered vertically */
+		}
+		
+		#about h2{
+			top: -50px;
+			position: relative;
+			font-size: 50px;
+			font-family: 'Comic Sans MS', cursive;
+		}
+		
+		
+		#skills {
+			position: relative;
+			top: 500px; /* Adjust the negative top value to move it up */
+			text-align: center; /* Center the content horizontally */
+			padding: 50px 0; /* Adjust the top and bottom padding as needed */
+		}
+		
+		#about-panel img {
+			position: relative;
+			top: -50px;
+			max-width: 45%; /* Ensure the image does not exceed the container width */
+			height: auto; /* Maintain the image's aspect ratio */
+			border-radius: 50px; /* Adjust the border-radius for smoother edges */
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add a subtle box shadow */
+		}
+		
+		#about p {
+			position:relative;
+			left: 430px;
+			top: -480px;
+			font-size: 40px;
+			font-family: 'Comic Sans MS', cursive;
+		}
+		
+		#about .technology{
+			position:relative;
+			left: 430px;
+			top: -515px;
+			font-family: "Arial", sans-serif;
+			font-size: 17px;
+		}
+		
+		#about .emailphone{
+			font-size: 17px;
+			font-family: "Arial", sans-serif;
+			color: red;
+		}
+
+
+
+
+    </style>
+    <title>Portfolio | Jonel Escaran</title>
+</head>
+
+<body>
+    <div class="dot-background">
+        <!-- Dots will be dynamically added here using JavaScript -->
+    </div>
+
+    <nav>
+		<ul>
+			<li>
+				<img src="C:/Users/tingjp/Desktop/java/web portfolio/jelogo.png" alt="Logo" style="width: 50px; height: 40px; border-radius: 100%;">
+			</li>
+			<li><a href="#home" onmouseover="changeHoveredLink(this)" onclick="changeActiveLink(this)">Home</a></li>
+			<li><a href="#about" onmouseover="changeHoveredLink(this)" onclick="changeActiveLink(this)">About</a></li>
+
+
+			<li><a href="#skills" onmouseover="changeHoveredLink(this)" onclick="changeActiveLink(this)">Skills</a></li>
+			<li><a href="#contact" onmouseover="changeHoveredLink(this)" onclick="changeActiveLink(this)">Contact</a></li>
+		</ul>
+	</nav>
+
+
+    <section id="home">
+        <div class="circle"></div>
+        <h2>I'm Jonel Escaran</h2>
+        <h2>Hi There,</h2>
+        <r>I Am Into</r>
+        <p id="web-development-text"></span><span id="typing-text"></span><span style="color: red;"> | </span></p>
+        <a href="#about" class="button">About Me</a>
+    </section>
+	
+	
+	
+	<section id="about">
+		<h2>About Me</h2>
+		<div id="about-panel">
+			<img src="C:/Users/tingjp/Desktop/java/web portfolio/profile.jpg" alt="Your Image">
+			<p>I'm Jonel C. Escaran</p>
+			<p class="technology">Diploma in Computer Engineering</p>
+			<p></p>
+			<p class="technology">I am a Full-Stack developer based in Pune, India. I am an Information Technology undergraduate from SPPU. I am very passionate about improving my coding skills & developing applications & websites. I build WebApps and Websites using MERN Stack. Working for myself to improve my skills. Love to build Full-Stack clones.</p>
+			<p class="emailphone">Email:</p>
+			<p></p>
+			<p class="emailphone">Phone:</p>
+		</div>
+	</section>
+
+
+	
+	<section id="skills">
+        <h2>Skills</h2>
+        <ul>
+		
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <!-- Add more skills as needed -->
+        </ul>
+    </section>
+	
+
+	
+	
+	<section id="contact">
+		<h2>Contact Me</h2>
+		<p>Email: jonelescaran@gmail.com</p>
+		<p>Phone: 09616185376</p>
+	</section>
+	
+	
+	
+
+    <script>
+    var hoveredLink = null;
+
+    function smoothScroll(target) {
+		const element = document.querySelector(target);
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		}
+	}
+
+
+
+    // Add smooth scroll for external links (e.g., links in the navigation bar)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            smoothScroll(this.getAttribute('href'));
+            changeActiveLink(this); // Add this line to change the active link when scrolling
+        });
+    });
+
+    function changeHoveredLink(link) {
+        if (!link.classList.contains('active')) {
+            hoveredLink = link;
+        }
+    }
+
+    function changeActiveLink(clickedLink) {
+        var links = document.querySelectorAll('nav a');
+        links.forEach(function (link) {
+            if (link !== clickedLink) {
+                link.classList.remove('active');
+            }
+        });
+
+        clickedLink.classList.add('active');
+        hoveredLink = clickedLink;
+
+        // Check if the clicked link is the "Home" link
+        if (clickedLink.getAttribute('href') === '#home') {
+            restartWebDevelopmentAnimation();
+        } else {
+            // For other sections, scroll to the specified section
+            const targetElement = document.querySelector(clickedLink.getAttribute('href'));
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    }
+
+    function restartWebDevelopmentAnimation() {
+        index = 0;
+        typingText.innerHTML = ''; // Clear the existing text
+        typeWriter(); // Start typing animation again
+    }
+
+    var text = "  Web Development";
+    var index = 0;
+    var typingText = document.getElementById("typing-text");
+
+    function typeWriter() {
+        if (index < text.length) {
+            typingText.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, 100);
+        }
+    }
+
+    window.onload = function () {
+        // Add a delay before starting the typing animation
+        setTimeout(typeWriter, 1500);
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var dotBackground = document.querySelector('.dot-background');
+
+        for (var i = 0; i < 100; i++) { // Increased from 50 to 100
+            var dot = document.createElement('div');
+            dot.className = 'dot';
+            dot.style.width = Math.random() * 6 + 'px';
+            dot.style.height = dot.style.width;
+            dot.style.left = Math.random() * 100 + 'vw';
+            dot.style.top = Math.random() * 100 + 'vh';
+            dot.style.animationDuration = Math.random() * 2 + 3 + 's';
+
+            dotBackground.appendChild(dot);
+        }
+    });
+
+</script>
+
+
+
+</body>
+
+</html>
