@@ -299,7 +299,7 @@
 			border-radius: 8px;
 			font-size: 18px;
 			width: 180px; /* Adjust the width as needed for 4 per row */
-			height: 80px; /* Set the desired height */
+			height: 115px; /* Set the desired height */
 		}
 
 
@@ -325,7 +325,13 @@
 			font-family: "Arial", sans-serif;
 		}
 		
-
+		.skill-image {
+			max-width: 50%; /* Ensure the image doesn't exceed the container's width */
+			max-height: 70%; /* Ensure the image doesn't exceed the container's height */
+			display: block; /* Remove any extra spacing below the image */
+			margin: auto; /* Center the image within the container */
+			border-radius: 8px; /* Apply border-radius to match the skill box */
+		}
 		
 
 
@@ -381,22 +387,39 @@
 
 	</section>
 
+
 	<section id="skills">
 		<h2>Skills</h2>
 		<div class="skills-container">
 			<div class="skill-box-container">
-				<div class="skill-box">HTML</div>
-				<div class="skill-box">CSS</div>
-				<div class="skill-box">JavaScript</div>
+				<div class="skill-box">
+					<img src="picture/html.png" alt="HTML Logo" class="skill-image">
+					<p>HTML</p>
+				</div>
+				<div class="skill-box">
+					<img src="picture/css.png" alt="CSS Logo" class="skill-image">
+					<p>CSS</p>
+				</div>
+				<div class="skill-box">
+					<img src="picture/javaScript.png" alt="JavaScript Logo" class="skill-image">
+					<p>JavaScript</p>
+				</div>
 				<!-- Add more skills as needed -->
-				<div class="skill-box">Java</div>
-				<div class="skill-box">C</div>
-				<div class="skill-box">C++</div>
+				<div class="skill-box">
+					<img src="picture/java.png" alt="Java Logo" class="skill-image">
+					<p>Java</p>
+				</div>
+				<div class="skill-box">
+					<img src="picture/c.png" alt="C Logo" class="skill-image">
+					<p>C</p>
+				</div>
+				<div class="skill-box">
+					<img src="picture/c++.png" alt="C++ Logo" class="skill-image">
+					<p>C++</p>
+				</div>
 			</div>
 		</div>
 	</section>
-
-	
 
 	
 	
