@@ -3,9 +3,6 @@
 
 
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="icon" href="assets/img/jelogo.ico" type="image/x-icon">
 		<link rel="stylesheet" href="assets/css/styles.css">
 
 		<title>Portfolio | Jonel Escaran</title>
@@ -14,8 +11,10 @@
 	
 	<body>
 		<div class="dot-background">
-			<!-- Dots will be dynamically added here using JavaScript -->
 		</div>
+		
+		
+		<link rel="icon" href="assets/img/jelogo.ico" type="image/x-icon">
 		
 		
 		<div class="circle" style="position: absolute; width: 270px; height: 270px; background-color: #1260CC; border-radius: 50%; top: 150px; background: url('assets/img/avatar.png') no-repeat center/cover; left: 650px; z-index: 1;"></div>
@@ -48,18 +47,17 @@
 		
 		<section id="about">
 			<h2>About Me</h2>
-			<div id="about-panel">
-					
-				<img src="assets/img/profile.jpg" alt="Your Image">
-				
-				</div>
+			<br>
+			<br>
+			<img src="assets/img/profile.jpg" alt="Your Image">
+			<div class="personal-info">
 				<p>I'm Jonel C. Escaran</p>
 				<p class="technology">Diploma in Computer Engineering</p>
-				<p class="introduction">I am a 2nd year Student at CITE Technical Institute taking up the Diploma in Computer Engineering Technology</p>
-				<!-- Resume Button -->
-				<button onclick="openResume()" class="button">View Resume</button>
-
+				<p class="introduction">I am a 2nd year student at CITE Technical Institute taking up the Diploma in Computer Engineering Technology</p>
+			</div>
+			<button onclick="openResume()" class="button">View Resume</button>
 		</section>
+
 
 
 		<section id="skills">
@@ -95,12 +93,18 @@
 			</div>
 		</section>
 
-		
 		<section id="contact">
 			<h2>Contact Me</h2>
-			<p>Email: jonelescaran@gmail.com</p>
-			<p>Phone: 09616185376</p>
+			<div class="box">
+				<img src="assets/img/service.jpeg" class="service-img">
+				<input class="name" type="text" placeholder="Name">
+				<input class="email" type="email" placeholder="Email">
+				<input class="phone" type="email" placeholder="Phone">
+				<textarea class="message" placeholder="Message"></textarea>
+				<button class="submit-button">Submit</button>
+			</div>
 		</section>
+
 
 		
 		<script>
