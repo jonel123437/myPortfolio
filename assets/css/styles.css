@@ -1,0 +1,315 @@
+body {
+	margin: 0;
+	background-color: #000;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+	width: 7px;
+	background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #808080; 
+	border-radius: 6px; 
+}
+
+::-webkit-scrollbar-track {
+	background-color: #000;
+}
+
+.dot-background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: -1;
+}
+
+.dot {
+	position: absolute;
+	background-color: #fff;
+	border-radius: 50%;
+	animation: twinkleDot 2s infinite linear;
+	transition: transform 0.3s ease;
+}
+
+@keyframes twinkleDot {
+	0%, 100% {
+		opacity: 0;
+		transform: scale(0.5) translate(0, 0);
+	}
+
+	50% {
+		opacity: 1;
+		transform: scale(1) translate(-10px, -10px);
+	}
+}
+
+nav {
+	background-color: black;
+	padding: 0px;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
+	border-bottom: 2px solid white;
+	text-align: left;
+	display: flex; /* Center vertically using flexbox */
+	align-items: center;
+}
+
+nav a {
+	text-decoration: none;
+	color: white;
+	font-size: 25px;
+	transition: underline 0.3s ease;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center; /* Center vertically using flexbox */
+}
+
+nav li {
+	margin-right: 80px;
+}
+
+nav img {
+	width: 50px;
+	height: 40px;
+	border-radius: 100%;
+	margin-right: 240px;
+	margin-left: 90px;
+	margin-top: 10px;
+}
+
+nav a:hover,
+nav a:focus,
+nav a.active {
+	text-decoration: none; /* Remove default underline */
+	border-bottom: 2px solid blue; /* Set the underline color to blue */
+	padding-bottom: 8px; /* Adjust the distance of the underline from the text */
+	color: blue; /* Adjust the color of the link */
+}
+
+nav a.active {
+	text-decoration-color: blue; /* Adjust the color of the underline for the active link */
+	color: blue;
+}
+
+
+
+h2 {
+	color: white;
+}
+
+#home {
+	position: relative; /* Ensure relative positioning for absolute positioning inside */
+	top: -20px;
+}
+
+#home h2 {
+	font-size: 50px;
+	color: white;
+	left: 100px;
+	top: 130px;
+	position: absolute;
+	font-family: 'Comic Sans MS', cursive;
+	font-weight: bold;
+}
+
+#home p {
+	font-size: 30px;
+	color: #ff0000;
+	top: 304px;
+	left: 225px;
+	position: absolute;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 100%;
+	animation: typing 2s steps(20, end) 1.5s, blink-caret 0.5s step-end 1.5s infinite;
+	font-weight: bold;
+}
+
+#home h2:nth-child(2) {
+	font-size: 50px;
+	color: white;
+	top: 210px;
+}
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+}
+
+@keyframes blink-caret {
+	from, to {
+		border-color: transparent;
+	}
+
+	50% {
+		border-color: transparent;
+	}
+}
+
+r {
+	color: white;
+	font-size: 30px;
+	position: absolute;
+	top: 335px;
+	left: 100px;
+}
+
+.button {
+	position: absolute;
+	top: 400px;
+	left: 100px;
+	display: inline-block;
+	padding: 12px 50px;
+	background-color: #1260CC;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 30px;
+	transition: background-color 0.3s ease;
+	font-size: 18px;
+	font-family: 'Comic Sans MS', cursive;
+}
+
+.button:hover {
+	background-color: #0000FF;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	margin-bottom: 10px;
+}
+
+section {
+	color: white;
+}
+
+#about {
+	position: absolute;
+	top: 700px;
+	font-size: 50px;
+	font-family: 'Comic Sans MS', cursive;
+}
+
+#about h2 {
+	text-align: center;
+}
+
+#about-panel img{
+	max-width: 35%;
+	border-radius: 30px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+#about p {
+	position: absolute;
+	top: 180px;
+	font-size: 40px;
+	padding-left: 450px;
+}
+
+#about .technology {
+	top: 260px;
+	font-size: 17px;
+}
+
+#about .introduction {
+	top: 330px;
+	font-size: 17px;
+}
+
+#about button {
+	position: absolute;
+	left: 450px;
+	top: 500px; /* Adjust the top position as needed */
+	cursor: pointer;
+}
+
+
+#skills {
+	position: relative;
+	top: 1500px;
+	text-align: center;
+	padding: 10px;
+	font-size: 50px;
+	font-family: 'Comic Sans MS', cursive;
+}
+
+.skills-container {
+	position: absolute;
+	background-color: rgba(18, 96, 204, 0.7);
+	border-radius: 15px;
+	top: 170px;
+	left: 90px;
+	width: 800px;
+	margin: 20px;
+	display: flex;
+	flex-wrap: wrap; /* Allow items to wrap to the next line */
+	justify-content: space-evenly; /* Align items evenly along the row */
+}
+
+.skill-box-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.skill-box {
+	background-color: #1260CC;
+	color: #fff;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 8px;
+	font-size: 18px;
+	width: 180px; /* Adjust the width as needed for 4 per row */
+	height: 115px; /* Set the desired height */
+}
+
+#skills .skill-box:hover {
+	background-color: #000080; /* Dark blue color, you can adjust the color code as needed */
+}
+
+
+
+#skills li {
+	font-size: 17px;
+	font-family: "Arial", sans-serif;
+}
+
+#contact {
+	position: relative;
+	font-family: 'Comic Sans MS', cursive;
+	top: 2000px;
+	text-align: center;
+	font-size: 50px;
+	padding: 10px;
+	padding-bottom: 400px;
+}
+
+#contact p {
+	font-size: 17px;
+	font-family: "Arial", sans-serif;
+}
+
+.skill-image {
+	max-width: 50%; /* Ensure the image doesn't exceed the container's width */
+	max-height: 70%; /* Ensure the image doesn't exceed the container's height */
+	display: block; /* Remove any extra spacing below the image */
+	margin: auto; /* Center the image within the container */
+	border-radius: 8px; /* Apply border-radius to match the skill box */
+}
