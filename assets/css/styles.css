@@ -275,14 +275,16 @@ section {
 	position: relative;
 	top: 1500px;
 	text-align: center;
-	padding: 5px;
-	font-size: 50px;
+	padding: 50px;
+	font-size: 30px;
 	font-family: 'Comic Sans MS', cursive;
+	background-color: #050548;
+	height: 800px;
 }
 
 #skills h2 {
 	position: absolute;
-	left: 420px;
+	left: 280px;
 }
 
 .skills-container {
@@ -337,7 +339,6 @@ section {
 	font-family: 'Comic Sans MS', cursive;
 	top: 2200px;
 	font-size: 50px;
-	padding: 5px;
 	padding-bottom: 500px;
 	background-color: #b3b3b3;
 	width: 100%;
@@ -345,7 +346,10 @@ section {
 
 #contact h2 {
 	position: relative;
-	left: 300px;
+	left: 270px;
+	font-size: 50px;
+	padding: 50px;
+	color: black;
 }
 
 
@@ -548,4 +552,45 @@ section {
 
 .quick-links a:hover i.fas.fa-arrow-circle-right {
 	transform: translateX(5px); /* Adjust the value as needed for the desired animation */
+}
+
+.social-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 25px;
+    margin-right: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s; /* Added transition for a smooth effect */
+}
+
+#foot .socialmedia{
+	position: absolute;
+	top: 180px;
+	left: 800px;
+}
+
+.social-circle i {
+    transition: transform 0.3s; /* Added transition for a smooth effect on the icon */
+}
+
+.facebook-circle {
+    background-color: #0077b5; /* Facebook blue color */
+    color: #fff; /* Text color */
+}
+
+.gmail-circle {
+    background-color: #0077b5; /* Gmail red color */
+    color: #fff; /* Text color */
+}
+
+.social-circle:hover {
+    background-color: red; /* Change the hover background color */
+}
+
+.social-circle:hover i {
+    transform: scale(1.1); /* Increase the size of the icon by 10% on hover */
 }
