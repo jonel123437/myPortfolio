@@ -4,7 +4,7 @@
 
 	<head>
 		<link rel="stylesheet" href="assets/css/styles.css">
-
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 		<title>Portfolio | Jonel Escaran</title>
 	</head>
 
@@ -41,7 +41,7 @@
 			<h2>Hi There,</h2>
 			<r>I Am Into</r>
 			<p id="web-development-text"></span><span id="typing-text"></span><span style="color: red;"> | </span></p>
-			<a href="#about" class="button">About Me</a>
+			<a href="#about" class="button">About Me <i class="fas fa-arrow-circle-down"></i></a>
 		</section>
 		
 		
@@ -55,7 +55,7 @@
 				<p class="technology">Diploma in Computer Engineering</p>
 				<p class="introduction">I am a 2nd year student at CITE Technical Institute taking up the Diploma in Computer Engineering Technology</p>
 			</div>
-			<button onclick="openResume()" class="button">View Resume</button>
+			<button onclick="openResume()" class="button">View Resume <i class="fas fa-angle-right"></i></button>
 		</section>
 
 
@@ -106,11 +106,57 @@
 				<img src="assets/img/phone.png" class="phone-img">
 				<textarea class="message" placeholder="Message"></textarea>
 				<img src="assets/img/message.jpg" class="message-img">
-				<button class="submit-button">Submit</button>
+				<button class="submit-button">Submit <i class="fa fa-paper-plane"></i></button>
 			</div>
+		</section>
+		
+		<section id="foot">
+			<h1>
+				<span>Jonel's Portfolio</span>
+				<span class="links">Quick Links</span>
+				<span class="contact-info">Contact Info</span>
+			</h1>
+			<p>Thank you for visiting my personal portfolio website. Connect with me over socials.</p>
+			<div class="contacts">
+				<p><i class="fa fa-phone"></i> +639 XX-XXX-XXXX</p>
+				<p><i class="fa fa-envelope"></i> jonelescaran@gmail.com</p>
+				<p><i class="fas fa-map-marker-alt"></i> Cebu, Philippines</p>
+			</div>
+			<div class="quick-links">
+				<a href="#home"><i class="fas fa-arrow-circle-right"></i>   Home</a>
+				<a href="#about"><i class="fas fa-arrow-circle-right"></i>   About</a>
+				<a href="#skills"><i class="fas fa-arrow-circle-right"></i>   Skills</a>
+				<a href="#contact"><i class="fas fa-arrow-circle-right"></i>   Contact</a>
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<hr>
+			<p class="design">Designed With <i class="fa fa-heart"></i> By Jonel C. Escaran</p>
 		</section>
 
 
+		
+		<script>
+			document.querySelector('.submit-button').addEventListener('click', function () {
+				var nameValue = document.querySelector('.name').value;
+				var emailValue = document.querySelector('.email').value;
+				var phoneValue = document.querySelector('.phone').value;
+				var messageValue = document.querySelector('.message').value;
+
+				if (nameValue === '' || emailValue === '' || phoneValue === '' || messageValue === '') {
+					alert('Please fill out all fields before submitting.');
+				} else {
+					// Your form submission logic goes here
+					alert('Form submitted successfully!');
+				}
+			});
+		</script>
+		
 		
 		<script>
 			function openResume() {
